@@ -1,7 +1,5 @@
 import httpx
 
-from httpx_example import response
-
 login_payload = {
   "email": "user23@example.com",
   "password": "string"
