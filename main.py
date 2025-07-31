@@ -1,16 +1,33 @@
-# This is a sample Python script.
+import json
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+json_data = '''{
+  "name": "Иван",
+  "age": 30,
+  "is_student": false,
+  "courses": ["Python", "QA Automation", "API Testing"],
+  "address": {
+    "city": "Москва",
+    "zip": "101000"
+  }
+}'''
+
+slovar = {'name': 'Иван',
+          'age': 30,
+          'is_student': False,
+          'courses': ['Python', 'QA Automation', 'API Testing'],
+          'address': {
+              'city': 'Москва',
+              'zip': '101000'}
+          }
+
+pars = json.loads(json_data)             # из json в словарь
+pars_2 = json.dumps(slovar, indent=2)    # из словаря в json
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+with open('js.json', 'r', encoding='utf-8') as file:
+    data = json.load(file)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+with open('njs.json', 'w', encoding='utf-8') as file:
+    json.dump(slovar, file, indent=2, ensure_ascii=False)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
