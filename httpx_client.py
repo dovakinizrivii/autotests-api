@@ -8,7 +8,6 @@ auth_payload = {
 auth_response = httpx.post('http://localhost:8000/api/v1/authentication/login', json=auth_payload)
 auth_response_data = auth_response.json()
 
-
 client = httpx.Client(
     base_url="http://localhost:8000",
     timeout=100,
